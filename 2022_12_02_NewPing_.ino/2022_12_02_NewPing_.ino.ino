@@ -107,37 +107,22 @@ void loop()
    L_distance = L_distance * 10; 
    R_distance = R_distance * 10;                           
                                 
-  if (F_distance < 250 && F_distance > 50)   // 정면물체 감지
+  if (F_distance < 250 && F_distance > 10)   // 정면물체 감지
     {
       Motor_1(3, speed);   
       delay(1550);
-
          if (R_distance > L_distance && R_distance > 10 && L_distance > 10)
           {
           Motor_2(1 ,speed);
-                        delay(50);          
-                Serial.print("L :");
-                Serial.print(L_distance);
-                Serial.println("cm");  
-                Serial.print("R :");
-                Serial.print(R_distance);
-                Serial.println("cm");
-                Serial.println("LLLLL");
+          Serial.println("L");
           delay(1100);
           Motor_1(2, speed);  
                                                 
           }
           else
           {
-                        Motor_2(2,speed);          
-                Serial.print("L :");
-                Serial.print(L_distance);
-                Serial.println("cm");  
-                Serial.print("R :");
-                Serial.print(R_distance);
-                Serial.println("cm");
-                
-                Serial.println("RRRRRRR");
+            Motor_2(2,speed);      
+            Serial.println("R");
             delay(1100);
             Motor_1(2, speed); 
           }
